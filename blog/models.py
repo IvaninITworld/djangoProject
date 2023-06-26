@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+
 
 # Create your models here.
 class Post(models.Model):
@@ -14,8 +16,16 @@ class Post(models.Model):
         verbose_name = 'post'
         verbose_name_plural = 'posts'
         db_table = 'blog_posts'
-        ordering = ('-modify_dt',) # tuple 형삭에서 ',' 는 구분되어지는 큰 의미를 가지기 때문에 반드시 넣어준다.
+        ordering = ('-modify_dt',)  # tuple 형삭에서 ',' 는 구분되어지는 큰 의미를 가지기 때문에 반드시 넣어준다.
 
     def __str__(self):
-        return self.titles
+        return self.title
 
+    def get_absolute_url(self):
+        return reverse('blog:post_detail', args=(self.slug,))
+
+    def get_previous(self):
+        return self.get_previous_by_modify_dt()
+
+    def get_next(self):
+        return self.get_next_by_modify_dt()
