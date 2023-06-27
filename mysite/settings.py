@@ -55,18 +55,19 @@ ROOT_URLCONF = 'mysite.urls'
 
 TEMPLATES = [
     {
-        'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # templates 경로지정
-        'DIRS': [
-            # os.path.join(BASE_DIR, "templates"),
+        "BACKEND": "django.template.backends.django.DjangoTemplates",
+        "DIRS": [
+            'templates', # BASE 를 위해 templates 추가 해준다. home.html, base.html 등등
+            'blog/templates/blog',
+            'bookmark/templates/bookmark',
         ],
-        'APP_DIRS': True,
-        'OPTIONS': {
-            'context_processors': [
-                'django.template.context_processors.debug',
-                'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+        "APP_DIRS": True,
+        "OPTIONS": {
+            "context_processors": [
+                "django.template.context_processors.debug",
+                "django.template.context_processors.request",
+                "django.contrib.auth.context_processors.auth",
+                "django.contrib.messages.context_processors.messages",
             ],
         },
     },
@@ -125,3 +126,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 MEDIA_URL = "/media/"
 MEDIA_ROOT = os.path.join(BASE_DIR, "media")
+
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]

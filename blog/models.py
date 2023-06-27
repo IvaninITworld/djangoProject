@@ -1,10 +1,10 @@
 from django.db import models
-from django.urls import reverse
+from django.urls import reverse # URL 패턴을 만들어주는 장고의 내장함수 reverse
 
 
 # Create your models here.
 class Post(models.Model):
-    title = models.CharField(verbose_name='TITLE', max_length=50)
+    title = models.CharField(verbose_name='TITLE', max_length=50) # 별칭 : verbose_name 폼 화면에서 레이블로 사용되는 문구
     # 단어와 단어 사이에 '-' 로 이어져 있는 값 e.g. the-46-year-old-man
     slug = models.SlugField('SLUG', unique=True, allow_unicode=True, help_text='one word for title alias.')
     description = models.CharField('DESCRIPTION', max_length=100, blank=True, help_text='simple description text.ßß')

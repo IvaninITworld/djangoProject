@@ -1,5 +1,4 @@
-from django.urls import path, re_path
-
+from django.urls import path, re_path # 한글 슬러그를 위해 re_path 를 사용
 from blog import views
 
 app_name = 'blog'
