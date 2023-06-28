@@ -31,16 +31,18 @@ ALLOWED_HOSTS = [
 # Application definition
 
 INSTALLED_APPS = [
-    "bookmark.apps.BookmarkConfig",
-    'blog.apps.BlogConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'taggit.apps.TaggitAppConfig',
     'taggit_templatetags2',
+    'bookmark.apps.BookmarkConfig',
+    'blog.apps.BlogConfig',
+    'photo.apps.PhotoConfig',
 ]
 
 MIDDLEWARE = [

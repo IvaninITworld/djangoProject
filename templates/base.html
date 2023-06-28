@@ -66,8 +66,9 @@
                 <a href="{% url 'blog:index' %}" class="nav-link text-white">Blog</a>
             </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input type="search" class="form-control mr-sm-2" placeholder="입력해주세요.">
+        <form class="form-inline my-2 my-lg-0" method="post" action="{% url 'blog:search' %}">
+            {% csrf_token %}
+            <input type="search" class="form-control mr-sm-2" placeholder="입력해주세요." name="search_word">
             <button type="submit" class="btn btn-outline-success my-2 my-sm-0">
                 Search
             </button>
