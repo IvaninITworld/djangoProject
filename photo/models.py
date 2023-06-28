@@ -1,6 +1,6 @@
 from django.db import models
 from django.urls import reverse
-from photo.fields import ThumnailImageField
+from photo.fields import ThumbnailImageField
 # Create your models here.
 
 class Album(models.Model):

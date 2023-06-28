@@ -57,13 +57,13 @@
                 <a href="#" class="nav-link disabled" tabindex="-1">Disabled</a>
             </li>
             <li class="nav-item mx-1 btn btn-primary">
-                <a href="{% url 'home' %}" class="nav-link text-white">Home</a>
-            </li>
-            <li class="nav-item mx-1 btn btn-primary">
                 <a href="{% url 'index' %}" class="nav-link text-white">Bookmark</a>
             </li>
             <li class="nav-item mx-1 btn btn-primary">
                 <a href="{% url 'blog:index' %}" class="nav-link text-white">Blog</a>
+            </li>
+            <li class="nav-item mx-1 btn btn-primary">
+                <a href="{% url 'photo:index' %}" class="nav-link text-white">Photo</a>
             </li>
         </ul>
         <form class="form-inline my-2 my-lg-0" method="post" action="{% url 'blog:search' %}">

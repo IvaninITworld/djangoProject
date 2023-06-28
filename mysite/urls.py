@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 from bookmark.views import BookmarkLV, BookmarkDV
 from mysite.views import HomeView
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -31,5 +33,8 @@ urlpatterns = [
     path('bookmark/<int:pk>/', BookmarkDV.as_view(), name='detail'),
 
     # blog
-    path('blog/', include('blog.urls'), name='blog'),
-]
+    path('blog/', include('blog.urls')),
+
+    # photo
+    path('photo/', include('photo.urls')),
+] + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
