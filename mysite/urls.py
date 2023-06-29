@@ -17,13 +17,16 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from bookmark.views import BookmarkLV, BookmarkDV
-from mysite.views import HomeView
+from mysite.views import HomeView, UserCreateView, UserCreateDoneTV
 from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', HomeView.as_view(), name='home'),
+    path('account/', include('django.contrib.auth.urls')),
+    path('account/register/', UserCreateView.as_view(), name='register'),
+    path('account/register/done/', UserCreateDoneTV.as_view(), name='register_done'),
 
     # bookmark
     # path('bookmark/', include('bookmark.urls')),

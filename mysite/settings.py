@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'bookmark.apps.BookmarkConfig',
     'blog.apps.BlogConfig',
     'photo.apps.PhotoConfig',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [
@@ -142,7 +143,7 @@ TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
 DISQUS_SHORTNAME = 'django-mr4dnygrbo'
 DISQUS_MY_DOMAIN = 'http://127.0.0.1:8000'
 
-
+LOGIN_REDIRECT_URL = '/'
 
 
 

@@ -9,6 +9,9 @@
         .thumbnail {
             border: 3px solid #ccc;
         }
+        .thumbnail img {
+            width: 100%;
+        }
     </style>
 {% endblock extra-style %}
 
@@ -24,7 +27,7 @@
                 <div class="ml-5">
                     <div class="thumbnail">
                         <a href="{{ photo.get_absolute_url }}">
-                            <img src="{{ photo.image.thumb_url }}" style="width: 100%;">
+                            <img src="{{ photo.image.thumb_url }}">
                         </a>
                     </div>
                 </div>
