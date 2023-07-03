@@ -39,9 +39,9 @@
                     Home<span class="sr-only">current</span>
                 </a>
             </li>
-            <li class="nav-item mx-1 btn btn-primary">
-                <a href="#" class="nav-link">Link</a>
-            </li>
+{#            <li class="nav-item mx-1 btn btn-primary">#}
+{#                <a href="#" class="nav-link">Link</a>#}
+{#            </li>#}
             <li class="nav-item mx-1 btn btn-primary dropdown">
                 <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown">
                     Dropdown
@@ -53,9 +53,9 @@
                     <a href="{% url 'blog:search' %}" class="dropdown-item">Search</a>
                 </div>
             </li>
-            <li class="nav-item mx-1 btn btn-primary">
-                <a href="#" class="nav-link disabled" tabindex="-1">Disabled</a>
-            </li>
+{#            <li class="nav-item mx-1 btn btn-primary">#}
+{#                <a href="#" class="nav-link disabled" tabindex="-1">Disabled</a>#}
+{#            </li>#}
             <li class="nav-item mx-1 btn btn-primary">
                 <a href="{% url 'index' %}" class="nav-link text-white">Bookmark</a>
             </li>
@@ -73,6 +73,28 @@
                 Search
             </button>
         </form>
+        <ul class="navbar-nav ml-5 mr-5">
+            <li class="nav-item dropdown mx-1 btn btn-primary">
+                {% if user.is_active %}
+                    <a href="#" class="nav-link dropdown-toggle text-white" data-toggle="dropdown">
+                        <i class="fas fa-user"></i>&ensp;
+                        {% firstof user.get_shor_name user.get_username %}&ensp;
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                        <a class="dropdown-item" href="{% url 'password_change' %}">Change Password</a>
+                    </div>
+                {% else %}
+                    <a href="#" class="nav-link dropdown-toggle text-white" data-toggle="dropdown">
+                        <i class="fas fa-user"></i>&ensp;Anonymous&ensp;
+                    </a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{% url 'login' %}">Login</a>
+                        <a class="dropdown-item" href="{% url 'register' %}">Register</a>
+                    </div>
+                {% endif %}
+            </li>
+        </ul>
     </div>
 </nav>
 
