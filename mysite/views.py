@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import AccessMixin
 from django.views.generic import TemplateView
 
 from django.views.generic import CreateView
@@ -17,3 +18,7 @@ class UserCreateView(CreateView):
 
 class UserCreateDoneTV(TemplateView):
     template_name = 'registration/register_done'
+
+
+class OwnerOnlyMixin(AccessMixin):
+    pass

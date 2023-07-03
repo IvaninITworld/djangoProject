@@ -39,9 +39,9 @@
                     Home<span class="sr-only">current</span>
                 </a>
             </li>
-{#            <li class="nav-item mx-1 btn btn-primary">#}
-{#                <a href="#" class="nav-link">Link</a>#}
-{#            </li>#}
+            {#            <li class="nav-item mx-1 btn btn-primary">#}
+            {#                <a href="#" class="nav-link">Link</a>#}
+            {#            </li>#}
             <li class="nav-item mx-1 btn btn-primary dropdown">
                 <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown">
                     Dropdown
@@ -53,11 +53,11 @@
                     <a href="{% url 'blog:search' %}" class="dropdown-item">Search</a>
                 </div>
             </li>
-{#            <li class="nav-item mx-1 btn btn-primary">#}
-{#                <a href="#" class="nav-link disabled" tabindex="-1">Disabled</a>#}
-{#            </li>#}
+            {#            <li class="nav-item mx-1 btn btn-primary">#}
+            {#                <a href="#" class="nav-link disabled" tabindex="-1">Disabled</a>#}
+            {#            </li>#}
             <li class="nav-item mx-1 btn btn-primary">
-                <a href="{% url 'index' %}" class="nav-link text-white">Bookmark</a>
+                <a href="{% url 'bookmark:index' %}" class="nav-link text-white">Bookmark</a>
             </li>
             <li class="nav-item mx-1 btn btn-primary">
                 <a href="{% url 'blog:index' %}" class="nav-link text-white">Blog</a>

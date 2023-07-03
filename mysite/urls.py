@@ -32,8 +32,10 @@ urlpatterns = [
     # path('bookmark/', include('bookmark.urls')),
 
     # bookmark - class-based views
-    path('bookmark/', BookmarkLV.as_view(), name='index'),
+    path('bookmark/', BookmarkLV.as_view(), name='index'), # bookmark/urls 에 작업
     path('bookmark/<int:pk>/', BookmarkDV.as_view(), name='detail'),
+
+    path('bookmark/', include('bookmark.urls')),
 
     # blog
     path('blog/', include('blog.urls')),

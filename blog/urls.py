@@ -1,4 +1,4 @@
-from django.urls import path, re_path # 한글 슬러그를 위해 re_path 를 사용
+from django.urls import path, re_path  # 한글 슬러그를 위해 re_path 를 사용
 from blog import views
 
 app_name = 'blog'
@@ -17,4 +17,9 @@ urlpatterns = [
     path('tag/<str:tag>/', views.TaggedObjectLV.as_view(), name='tagged_object_list'),
 
     path('search/', views.SearchFormView.as_view(), name='search'),
+
+    path('add/', views.PostCreateView.as_view(), name='add'),
+    path('change/', views.PostChangeLV.as_view(), name='change'),
+    path('<int:pk>/update/', views.PostUpdateView.as_view(), name='update'),
+    path('<int:pk>/delete/', views.PostDeleteView.as_view(), name='delete'),
 ]
