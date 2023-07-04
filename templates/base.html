@@ -42,26 +42,41 @@
             {#            <li class="nav-item mx-1 btn btn-primary">#}
             {#                <a href="#" class="nav-link">Link</a>#}
             {#            </li>#}
-            <li class="nav-item mx-1 btn btn-primary dropdown">
-                <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown">
-                    Dropdown
-                </a>
-                <div class="dropdown-menu">
-                    <a href="{% url 'admin:index' %}" class="dropdown-item" target="_blank">Admin</a>
-                    <div class="dropdown-divider"></div>
-                    <a href="{% url 'blog:post_archive' %}" class="dropdown-item">Archive</a>
-                    <a href="{% url 'blog:search' %}" class="dropdown-item">Search</a>
-                </div>
-            </li>
+            {#            <li class="nav-item mx-1 btn btn-primary dropdown">#}
+            {#                <a href="#" class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown">#}
+            {#                    Dropdown#}
+            {#                </a>#}
+            {#                <div class="dropdown-menu">#}
+            {#                    <a href="{% url 'admin:index' %}" class="dropdown-item" target="_blank">Admin</a>#}
+            {#                    <div class="dropdown-divider"></div>#}
+            {#                    <a href="{% url 'blog:post_archive' %}" class="dropdown-item">Archive</a>#}
+            {#                    <a href="{% url 'blog:search' %}" class="dropdown-item">Search</a>#}
+            {#                </div>#}
+            {#            </li>#}
             {#            <li class="nav-item mx-1 btn btn-primary">#}
             {#                <a href="#" class="nav-link disabled" tabindex="-1">Disabled</a>#}
             {#            </li>#}
-            <li class="nav-item mx-1 btn btn-primary">
-                <a href="{% url 'bookmark:index' %}" class="nav-link text-white">Bookmark</a>
+            <li class="nav-item dropdown mx-1 btn btn-primary dropdown">
+                {#<a href="{% url 'bookmark:index' %}" class="nav-link">Bookmark</a>#}
+                <a href="#" class="nav-link dropdown-toggle text-white" data-toggle="dropdown">Bookmark</a>
+                <div class="dropdown-menu">
+                    <a href="{% url 'bookmark:index' %}" class="dropdown-item">List</a>
+                    <a href="{% url 'bookmark:add' %}" class="dropdown-item">Add</a>
+                    <a href="{% url 'bookmark:change' %}" class="dropdown-item">Change</a>
+                </div>
             </li>
-            <li class="nav-item mx-1 btn btn-primary">
-                <a href="{% url 'blog:index' %}" class="nav-link text-white">Blog</a>
+            <li class="nav-item dropdown mx-1 btn btn-primary dropdown">
+                {#<a href="{% url 'blog:index' %}" class="nav-link">Bookmark</a>#}
+                <a href="#" class="nav-link dropdown-toggle text-white" data-toggle="dropdown">Blog</a>
+                <div class="dropdown-menu">
+                    <a href="{% url 'blog:index' %}" class="dropdown-item">List</a>
+                    <a href="{% url 'blog:add' %}" class="dropdown-item">Add</a>
+                    <a href="{% url 'blog:change' %}" class="dropdown-item">Change</a>
+                </div>
             </li>
+            {#            <li class="nav-item mx-1 btn btn-primary">#}
+            {#                <a href="{% url 'blog:index' %}" class="nav-link text-white">Blog</a>#}
+            {#            </li>#}
             <li class="nav-item mx-1 btn btn-primary">
                 <a href="{% url 'photo:index' %}" class="nav-link text-white">Photo</a>
             </li>
