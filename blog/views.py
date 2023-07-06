@@ -108,7 +108,7 @@ class PostCreateView(LoginRequiredMixin, CreateView):
 
 
 class PostChangeLV(LoginRequiredMixin, ListView):
-    template_name = 'bolg/post_change_list.html'
+    template_name = 'blog/post_change_list.html'
 
     def get_queryset(self):
         return Post.objects.filter(owner=self.request.user)

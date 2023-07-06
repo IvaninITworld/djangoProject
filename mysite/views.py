@@ -20,7 +20,7 @@ class UserCreateDoneTV(TemplateView):
     template_name = 'registration/register_done'
 
 
-class OwnerOnlyMixin(AccessMixin):
+class OwnerOnlyMixin(AccessMixin): # 주인만 지울 수 있게 하는
     raise_exception = True
     permission_denied_message = "Owner only can update/delete the objectj"
 
